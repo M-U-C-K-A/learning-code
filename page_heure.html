@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+    <title>Heure actuelle pour Paris, France - Time.is</title>
+    <script async=true>
+        (function() {
+            var host = window.location.hostname;
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://quantcast.mgr.consensu.org'
+                .concat('/choice/', '4TE0mgHmkNwB-', '/', host, '/choice.js')
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                event.source.postMessage(returnMsg, '*');
+                            },
+                            payload.parameter
+                        )
+                    }
+                }
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+                    if (win === window.top) {
+                        break
+                    }
+                    win = win.parent
+                }
+                if (!cmpFrame) {
+                    addFrame()
+                    win.__tcfapi = tcfAPIHandler
+                    win.addEventListener('message', postMessageEventHandler, false)
+                }
+            }
+            makeStub()
+            var uspStubFunction = function() {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function() {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg)
+                        }
+                    }, 500)
+                }
+            }
+            var checkIfUspIsReady = function() {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible')
+                } else {
+                    clearInterval(uspInterval)
+                }
+            }
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000)
+            }
+        })();
+    </script>
+    <script data-cfasync="false">
+        AdP = 'FS';
+        var freestar = freestar || {};
+        freestar.hitTime = Date.now();
+        freestar.queue = freestar.queue || [];
+        freestar.config = freestar.config || {};
+        freestar.debug = window.location.search.indexOf("fsdebug") === -1 ? false : true;
+        freestar.config.enabled_slots = [];
+        ! function(a, b) {
+            var c = b.getElementsByTagName("script")[0],
+                d = b.createElement("script"),
+                e = "https://a.pub.network/timeis";
+            e += freestar.debug ? "/qa/pubfig.min.js" : "/pubfig.min.js", d.async = !0, d.src = e, c.parentNode.insertBefore(d, c)
+        }(window, document);
+        freestar.initCallback = function() {
+            (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false: freestar.newAdSlots(freestar.config.enabled_slots)
+        }
+    </script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('footer');
+    document.createElement('quote');
+    document.createElement('cite');
+    document.createElement('time');
+    </script>
+    <![endif]-->
+    <script>
+        var updint = 1000,
+            U = "undefined",
+            N = null,
+            E = true,
+            F = !E,
+            O = "object",
+            S = "string",
+            D = document,
+            A = 0,
+            fc = {
+                a: 0
+            },
+            bfc = 1,
+            uT = "Paris : ",
+            sT, tD, pY = lY = 69,
+            cY = syncn = rsy = 0,
+            ztrans = 1648342800000,
+            newzo = 120,
+            ss = {
+                "0218": "&uarr; 07:53 &darr; 18:16 (10h 23min)",
+                "0219": "&uarr; 07:51 &darr; 18:18 (10h 26min)"
+            },
+            destT = 0,
+            yrp = "",
+            csup = 1,
+            czo = 0,
+            rqT = 0,
+            syncT = 0,
+            syncquota = 10,
+            earliest_syncT = 0,
+            xR = 1,
+            syncm = '',
+            syncdt = '',
+            adH = 110,
+            mZ = 64,
+            ltr = 1,
+            ticks = 0,
+            Tstate = {
+                chosen_loc: 0,
+                current_page: "specific_location"
+            };
+
+        function _tD(M) {
+            sT = M;
+            tD = new Date().getTime() - M - Math.round(lY / 2);
+            cY = lY - pY;
+            if (cY < 10) cY = 10
+        }
+        _tD(1645186979036)
+
+        function gob(e) {
+            if (typeof e == O) return e;
+            if (D.getElementById) return D.getElementById(e);
+            return eval(e)
+        }
+
+        function bluritem(e) {
+            e = gob(e);
+            e.className = e.className.replace('focused', 'blr');
+            bfc = 1
+        }
+
+        function focusitem(e) {
+            bfc = 0;
+            e = gob(e);
+            e.className = e.className.replace('blr', 'focused');
+            e.className = e.className.replace('submitted', 'focused')
+        }
+
+        function mouseover(e) {
+            e.className = e.className.replace('mout', 'hovered')
+        }
+
+        function mouseout(e) {
+            e.className = e.className.replace('hovered', 'mout')
+        }
+
+        function setfocus(g) {
+            if (typeof fc[g] == U) fc[g] = 1;
+            else fc[g]++
+                if (fc['a'] != 0 && fc['a'] != g) losefocus(fc['a'])
+            fc['a'] = g;
+            gob(g).className = gob(g).className.replace('hide', 'show');
+            bfc = 0
+        }
+
+        function losefocus(g) {
+            if (fc['a'] != g) fc[g] = 0;
+            else {
+                fc[g]--;
+                if (fc[g] < 1) {
+                    fc['a'] = 0;
+                    fc[g] = 0;
+                    gob(g).className = gob(g).className.replace('show', 'hide');
+                    bfc = 1
+                }
+            }
+        }
+
+        function changeclass(i, x, y) {
+            var o = gob(i);
+            if (o) o.className = (o.className.replace(x, '') + ' ' + y).replace(/  +/, ' ')
+        }
+
+        dmode = 0
+
+        function setcookie(n, v) {
+            var x = new Date();
+            x.setDate(x.getDate() + 365);
+            D.cookie = n + '=' + encodeURIComponent(v) + '; expires=' + x.toGMTString() + '; path=/'
+            if (D.cookie.length < 1) csup = 0
+        }
+
+        function httpSync() {
+            nextSyncT = 0
+            array_name = 'main'
+            xR = N
+            gob('syncH').innerHTML = p_syncing;
+            gob('syncDtl').innerHTML = '&nbsp;';
+            gob('msgs').className = gob('msgs').className.replace('hdn', 'vsbl')
+            if (window.XMLHttpRequest) xR = new XMLHttpRequest()
+            else if (window.ActiveXObject) xR = new ActiveXObject("Microsoft.XMLHTTP")
+            if (xR != N) {
+                rqT = new Date()
+                czo = -rqT.getTimezoneOffset()
+                xR.onreadystatechange = s_C
+                xR.open('get', '/t/?' + l + '.' + syncn + '.' + lY + '.' + tD + '.' + rsy + 'p.' + czo + '.' + locs[array_name][conf['h']][1] + '.' + rqT.getTime() + '.' + sT + '.' + yrp, E)
+                xR.send(N)
+                yrp = ''
+            } else xR = 'N/A'
+        }
+        var Y = ['', '']
+
+        function s_C() {
+            var o, dots = '...',
+                sym = Y[0],
+                syd = Y[1]
+            if (xR.readyState == 4) {
+                if (xR.status == 200) {
+                    var rpT = new Date(),
+                        n = rpT - rqT,
+                        r = xR.responseText.split("\n")
+                    sT = r[1]
+                    var prevST = syncT
+                    syncT = new Date()
+                    syncT.setTime(syncT.getTime() - tD)
+                    if (syncn === 0 || rsy || n < lY) {
+                        if (r[0].length == 13) r.unshift('ok');
+                        if (r.length < 7 || r[0] !== 'ok') {
+                            if (r[0].substr(0, 6) == 'error:') p_failm = r[0].substr(6)
+                            else gob('msgs').className = 'w90 pulldowncv nonet'
+                            hideTO = setTimeout('sync_cleanup(0)', 4000)
+                        } else {
+                            p_failm = p_fail
+                            if (rsy && (syncT - prevST < 60000)) {
+                                syncquota--
+                                if (syncquota < 0) earliest_syncT = new Date(syncT.getTime() + 120000)
+                            } else if (earliest_syncT == 0) syncquota = 10
+                        }
+                        rsy = 0
+                        lY = n
+                        _tD(r[1])
+
+                        Y = T_I.initClock()
+                        sym = Y[0]
+                        syd = Y[1]
+                    }
+                    nextSyncT = new Date()
+                    nextSyncT.setTime(nextSyncT.getTime() - tD + 3600000)
+                    if (49 < cY && syncn < 1) {
+                        for (var i = 0; i < syncn; i++) dots += '.'
+                        sym = p_syncing + dots
+                        syd = ''
+                        syncn++
+                        httpSync()
+                    } else {
+                        o = gob('front_loc');
+                        if (o) o.style.visibility = 'visible';
+                        o = gob('socbuttons');
+                        if (o) o.style.visibility = 'inherit'
+                    }
+                    if (syd == '') syd = '&nbsp;'
+                    for (i = 5; i < r.length - 1; i++) spdays[r[i].substr(0, 4)] = r[i].substr(4, r[i].length)
+                    if (zone_id !== 'UTC') { // zone_offset=r[2];zone_id=r[3]
+                    }
+                } else {
+                    sym = p_conn_failed
+                    syd = xR.statusText
+                    if (syd != '') syd = ' (' + syd + ')'
+                    if (!A) {
+                        if (xR.statusText != "") sym += syd
+                        syd = '<a href="javascript:T_I.check_again()">' + p_try_again + '</a>'
+                    }
+                }
+                gob('syncH').innerHTML = sym
+                gob('syncDtl').innerHTML = syd
+                var ac = gob('accuracy')
+                if (ac) ac.innerHTML = syd
+                setmsgH(0)
+            }
+        }
+
+        function sg(q, sd) {
+            T_I.set_susdiv(sd);
+            o = gob(sd)
+            if ((N !== q.match(/^Lieu \d+ \(optionnel\)$/)) || q == 'Entrez un lieu' || q == 'Automatique') return ''
+            q = q.replace(/ +$/, '').replace(/^ +/, '')
+            if (q.length < 4) q = q.toLowerCase()
+            var n = sd.replace('susdiv', '')
+            if ((typeof complocurls != U) && (typeof complocurls[n] != U) && (complocurls[n][0] == q)) return ''
+            if (typeof prevq[sd] !== U && q == prevq[sd] || q == e_loc) {
+                o.className = o.className.replace('hide', 'show')
+                return ''
+            }
+            if (q.length < 1) {
+                o.innerHTML = '';
+                chosen_sus[sd] = 0;
+                prevq[sd] = q;
+                current_q[sd] = q;
+                return ''
+            }
+            prevq[sd] = q
+            if (sus[q]) {
+                T_I.populate_sus(sd, q, 1);
+                return ''
+            }
+            var xh = N,
+                xhp = []
+            if (window.XMLHttpRequest) xh = new XMLHttpRequest()
+            else if (window.ActiveXObject) xh = new ActiveXObject('Microsoft.XMLHTTP')
+            if (xh != N) {
+                rqT = new Date()
+                xh.onreadystatechange = function() {
+                    if (xh.readyState == 4)
+                        if (xh.status == 200) {
+                            var xr = xh.responseText.split("\n"),
+                                st = xr.shift(),
+                                q1 = xr.shift()
+                            for (var i in xr) {
+                                if (i === 'indexOf') break
+                                xr[i] = xr[i].split('	')
+                            }
+                            sus[q1] = xr
+                            if (typeof prevsustime[xhp['sd']] == U || prevsustime[xhp['sd']] < xhp['t']) {
+                                prevsustime[xhp['sd']] = xhp['t'];
+                                T_I.populate_sus(xhp['sd'], xhp['q'], 1)
+                            }
+                        }
+                }
+                xhp['sd'] = sd
+                xhp['t'] = new Date()
+                if (q == '.') q = '.a'
+                if (q == '..') q = '.,'
+                xhp['q'] = q
+                xh.open("get", '/s/' + l + '/' + q.length + '/' + encodeURIComponent(q.replace(/ /g, '_')) + '?' + xhp['t'].getTime(), E)
+                xh.send(N)
+            } else xh = 'N/A'
+        }
+
+        function arrows(sd, e) {
+            var k = e.which || e.keyCode
+            if (k == 40 || k == 38) T_I.cycle_sus(sd, k - 39)
+            else if (k == 9 || k == 13) T_I.take_chosen(sd, k)
+            else return E
+            return F
+        }
+
+        function togglesimple(x) {
+            var g = '',
+                c = bod.className
+            if (x !== 0 && c.indexOf('simplify') != -1) {
+                dmode = 0;
+                bod.className = c.replace('simplify', 'showall');
+                x = 1
+            } else if (x !== 1 && c.indexOf('showall') != -1) {
+                dmode = 1;
+                bod.className = c.replace('showall', 'simplify');
+                x = 0;
+                g = 'none'
+            } else x = ''
+            if (x !== '') {
+                var gp = gob("___plusone_0");
+                if (gp != N) gp.style.display = g
+                setsizes(1);
+                T_I.tick('', 0)
+            }
+        }
+        var kacs = {
+            f: "js:t_FS()",
+            '.': "js:t_s()",
+            sO: "/fr/customize",
+            sS: "js:tl_a()",
+            sC: "/fr/calendar",
+            sD: "js:setcol((conf['c']*1+1)%2)",
+            sJ: "/fr/clock",
+            sM: "js:toggle_menu(2)",
+            sT: "/fr/compare",
+            "-": "/fr/countdown",
+            sU: "/fr/UTC",
+            sZ: "js:change_clock_size()",
+            "$": "https://currency.world",
+            "?": "/fr/howto"
+        }
+        handle_keys = function(ev) {
+            if (!bfc) return E
+            var i, u, e = ev || event,
+                q, k = e.which || e.keyCode,
+                s = e.shiftKey ? 's' : ''
+            if (e.altKey || e.metaKey || e.ctrlKey) return E
+            q = String.fromCharCode(k)
+            if (q.toUpperCase() !== q.toLowerCase()) q = s + q
+            if (typeof kacs[q] === S) {
+                u = kacs[q]
+                if (u.substr(0, 3) == "js:") eval(u.substr(3))
+                else {
+                    if (u.substr(0, 4) == "http") open(u, "_blank")
+                    else location = u
+                }
+                return F
+            }
+
+            if (k === 47 || (96 < k && k < 123) || (64 < k && k < 91)) {
+                toggle_menu(0);
+                t_search(1);
+                if (k === 47) return F
+            }
+            i = locs.favs.length - k + 48;
+            if ((48 < k && k < 58) && U !== typeof locs.favs[i]) {
+                location = '/' + locs.favs[i][4];
+                return F
+            }
+            return E
+        }
+        handle_arrow_keys = function(ev) {
+            if (fc["a"] == 1) return E
+            var e = ev || event,
+                k = e.which || e.keyCode,
+                s = e.shiftKey ? 's' : ''
+            if (e.altKey || e.metaKey || e.ctrlKey) return E
+            if (k == 27) {
+                toggle_menu(0);
+                if (!t_search(0)) {
+                    togglesimple(1);
+                    pstart = [];
+                    chosendayid = F;
+                    goto_this_year()
+                }
+                return F
+            }
+            if (k == 36) {
+                if (window.scrollY !== 0) return E;
+                location = '/';
+                return F
+            }
+            if (bfc && 36 < k && k < 41 && typeof kacs[s + k] === S) {
+                var u = kacs[s + k]
+                if (u.substr(0, 3) == "js:") eval(u.substr(3))
+                else location = u
+                return F
+            }
+            return E
+        }
+
+        function toggle_more() {
+            var t = gob('top'),
+                cn = 'less'
+            if (t.className == 'less') cn = 'more'
+            t.className = cn
+            set_mw()
+        }
+        D.onkeypress = this.handle_keys
+        D.onkeydown = this.handle_arrow_keys
+    </script>
+    <meta name="description" content="Heure exacte actuelle, fuseaux horaires, différence d'heure, heure de lever et de coucher du soleil, infos pratiques pour Paris, France." />
+    <meta property="og:image" content="https://time.is/img/shareable/time_is_110011.png" />
+    <meta property="og:image" content="https://time.is/img/shareable/time_is_110011_dark.png" />
+    <meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742.png" />
+    <meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742_dark.png" />
+    <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="image_src" href="/img/shareable/time_is_110011.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon_2021-11-20.png" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0
+        }
+        
+        div,
+        h1,
+        h2,
+        h3,
+        label,
+        time {
+            clear: both
+        }
+        
+        div,
+        img,
+        form {
+            float: left
+        }
+        
+        #clock {
+            float: left
+        }
+        
+        body {
+            background: #fff
+        }
+        
+        span a,
+        .nw,
+        #clock {
+            white-space: nowrap
+        }
+        
+        body,
+        select,
+        input,
+        textarea {
+            font: 18px/26px 'Times New Roman', Times, FreeSerif, serif;
+            color: #333;
+            letter-spacing: 2px
+        }
+        
+        #nav h3 {
+            letter-spacing: 1px
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* latin-ext */
+        
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+            font-family: 'TimeTraveler';
+            font-style: normal;
+            font-weight: 400;
+            src: url('/fonts/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
+        }
+        
+        .mt #clock {
+            font-family: 'TimeTraveler', Arial, sans-serif
+        }
+        
+        #clock {
+            font-size: 100px;
+            line-height: normal;
+            position: relative;
+            font-weight: bold
+        }
+        
+        #clock span {
+            display: inline-block;
+            text-align: center
+        }
+        
+        .mon,
+        .caln td div span {
+            display: inline-block;
+            text-align: center;
+            width: 12px
+        }
+        
+        #clock0_bg {
+            margin: 60px 0
+        }
+        
+        div.lg a:link,
+        div.lg a:visited {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 20px 30px;
+            letter-spacing: 3px
+        }
+        
+        blockquote {
+            font-weight: 900
+        }
+        
+        #favs li .time span {
+            display: inline-block;
+            text-align: center;
+            width: 13px
+        }
+        
+        @media only screen and (max-width:639px) {
+            .mon {
+                width: 10px
+            }
+        }
+        
+        @media only screen and (max-width:1280px) {
+            #clock0_bg {
+                margin: 60px 0
+            }
+        }
+        
+        @media only screen and (max-width:1024px) {
+            #clock0_bg {
+                margin: 30px 0
+            }
+        }
+        
+        @media only screen and (max-width:768px) {
+            #clock0_bg {
+                margin: 20px 0
+            }
+        }
+        
+        @media only screen and (max-height:720px) {
+            #clock0_bg {
+                margin: 20px 0
+            }
+        }
+        
+        @media only screen and (max-width:400px) {
+            div.lg a:link,
+            div.lg a:visited {
+                font-size: 14px;
+                padding: 15px 20px;
+                letter-spacing: 2px
+            }
+        }
+        
+        .divider {
+            color: #ccc
+        }
+        
+        .lsp {
+            float: right;
+            color: #333
+        }
+        
+        .lsp ul {
+            list-style: none;
+            text-align: right
+        }
+        
+        a:link,
+        a:visited {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc
+        }
+        
+        h1,
+        h2,
+        .clockdate,
+        .clockplace {
+            font-size: 36px;
+            line-height: 40px;
+            font-weight: normal;
+            letter-spacing: 1px
+        }
+        
+        .w90 {
+            margin-left: 5%;
+            width: 90%
+        }
+        
+        #c {
+            padding-bottom: 40px
+        }
+        
+        #msgdiv {
+            float: left
+        }
+        
+        div#msgs h1 {
+            margin-right: 30px;
+            float: left
+        }
+        
+        .lg a:link,
+        .lg a:visited {
+            background: #c35;
+            float: left;
+            display: block;
+            color: #fff;
+            border: 0;
+            padding: 20px;
+            font: 26px/20px Montserrat, Arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: 2px
+        }
+        
+        .lg {
+            z-index: 9;
+            position: relative
+        }
+        
+        #pl,
+        #popmsg {
+            display: none
+        }
+        
+        time {
+            cursor: pointer;
+            direction: ltr
+        }
+        
+        #top {
+            width: 90%;
+            margin: 0 5%
+        }
+        
+        #clock0_bg {
+            width: 100%
+        }
+        
+        #clock0,
+        .clockplace,
+        #lC,
+        .clockdate,
+        #daydiv {
+            text-align: right
+        }
+        
+        select {
+            height: 40px
+        }
+        
+        #pL a:link,
+        #pL a:visited,
+        #pL1 a,
+        #lC,
+        #daydiv,
+        #daydiv1 {
+            color: #333
+        }
+        
+        #pL,
+        #pL1 {
+            margin-bottom: 20px
+        }
+        
+        #favs {
+            width: 100%;
+            list-style: none;
+            margin: 0 0 10px 0;
+            padding: 0;
+            float: right
+        }
+        
+        #favs span {
+            color: #999
+        }
+        
+        .tbx div {
+            clear: none;
+            float: left;
+            text-align: left;
+            white-space: nowrap;
+            font-size: 18px;
+            line-height: 22px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 2px
+        }
+        
+        .tbx a {
+            display: block;
+            margin: 0 0 10px 10px;
+            padding: 10px 20px;
+            border: 1px solid #eee;
+            background: #eee;
+            text-decoration: none
+        }
+        
+        .txtin,
+        .dateinput {
+            background: #eee;
+            border: 1px solid #ddd;
+            width: 138px;
+            padding: 10px;
+            color: #333
+        }
+        
+        .mout {
+            border-color: #eee
+        }
+    </style>
+    <link rel="stylesheet" href="/css/t2022-02-08b.css" />
+    <script src="/js/t2022-02-15b.js"></script>
+</head>
+
+<body id="bdy" class="showall mt l ">
+    <div id="popmsg">
+        <div id="popmsgpos">
+            <div id="popmsgbg" onclick="remove_popmsg()">
+                <div id="popmsg-close-btn">×</div>
+                <div id="popmsgtext"></div>
+            </div>
+        </div>
+    </div>
+    <div id="mainwrapper">
+        <div id="top">
+            <div class="lg">
+                <h2><a href="https://time.is/fr/" target="_top" title="Time.is">Time.is</a></h2>
+            </div>
+            <div class="icon-nav tr">
+                <a href="#nav" onclick="return toggle_menu(1)" title="menu">
+                    <div style="margin-top:2px;width:100%;border-top:5px solid #aaa;padding:3px 0 2px 0;border-bottom:5px solid #aaa;margin-bottom:5px"></div>
+                    <div style="width:100%;border-top:5px solid #aaa;padding:2px 0;margin-bottom:4px"></div>
+                </a>
+            </div>
+            <script>
+                function t_search(x) {
+                    var qi = gob('q'),
+                        w = 600
+                    if (x) {
+                        scrollTo(0, 0)
+                        qi.focus()
+                        if (ww < 915) w = ww * .9 - 80
+                        if (qi.value.indexOf('') != -1) qi.value = qi.value.replace('', '');
+                        setfocus('susdiv');
+                        sg(qi.value, 'susdiv');
+                        focusitem(qi);
+                        if (dmode) bod.className = bod.className.replace('simplify', 'showall');
+                        gob('qbox').className = 'fcs'
+                    } else {
+                        if (gob('qbox').className !== 'fcs') return F;
+                        qi.blur()
+                        w = 100
+                        if (ww < 915) w = 100
+                        if (ww < 641 || Tstate.current_page == 'Unix_time_now') w = 0
+                        if (qi.value === '') qi.value = ''
+                        losefocus('susdiv')
+                        bluritem(qi)
+                        if (dmode) bod.className = bod.className.replace('showall', 'simplify')
+                        setTimeout("gob('qbox').className=''", 200)
+                    }
+                    qi.style.width = w + 'px'
+                    return E
+                }
+            </script>
+            <form id="qbox" class="tr" action="/fr/" method="get" autocomplete="off" accept-charset="UTF-8" onsubmit="return T_I.submit(gob('q').value)">
+                <input type="text" id="q" name="q" value="" tabindex="1" maxlength="100" accesskey="3" class="txtin blr mout" onfocus="t_search(1)" onblur="t_search(0)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onkeydown="arrows('susdiv',event)" onkeyup="sg(this.value,'susdiv')"
+                />
+                <div id="susdiv" class="susdiv" onmouseover="setfocus('susdiv')" onmouseout="losefocus('susdiv')"></div>
+            </form>
+        </div>
+        <div id="time_section" class="w1">
+            <div id="msgs" class="tr w90">
+                <div id="msgdiv">
+                    <h1>Heure actuelle pour <span>Paris</span>, France</h1>
+                    <div id="syncH" style="float:left" class="hide">&nbsp;</div>
+                </div>
+                <div id="syncDtl" class="w1 hide">&nbsp;</div>
+            </div>
+            <div style="width:100%;position:relative">
+                <div id="clock0_bg" onclick="clockclick(event)"><time id="clock">13:22:59</time></div>
+            </div><noscript><h2 class="w90 error">L’heure n’avance pas car JavaScript n’est pas activé dans votre navigateur.</h2></noscript>
+            <div id="dd" class="w90 tr clockdate" onclick="location='/fr/calendar'" title="Cliquez pour le calendrier">vendredi 18 février 2022, semaine 7</div>
+            <div id="daydiv" class="hidden"></div>
+            <div id="lC" class="w90 tr"><span id="locw">Soleil : <span id="sun" class="nw">&uarr; 07:53 &darr; 18:16 (10h 23min)</span> <a href="Paris#time_zone">Plus d’infos</a></span>
+                <div class="lsp w90 tr"></div>
+            </div>
+            <div class="w90 tr">
+                <ul id="favs" class="tbx">
+                    <li><a href="/fr/Tokyo" id="time-0">Tokyo<br><span id="favt0">21:22</span></a></li>
+                    <li><a href="/fr/Beijing" id="time-1">Pékin<br><span id="favt1">20:22</span></a></li>
+                    <li><a href="/fr/Moscow" id="time-2">Moscou<br><span id="favt2">15:22</span></a></li>
+                    <li><a href="/fr/Paris" id="time-3">Paris<br><span id="favt3">13:22</span></a></li>
+                    <li><a href="/fr/London" id="time-4">Londres<br><span id="favt4">12:22</span></a></li>
+                    <li><a href="/fr/New_York" id="time-5">New York<br><span id="favt5">07:22</span></a></li>
+                    <li><a href="/fr/Los_Angeles" id="time-6">Los Angeles<br><span id="favt6">04:22</span></a></li>
+                </ul>
+            </div>
+            <div id="recover" style="width:100%">
+                <div class="tr" style="width:90%;padding:0 5% 20px 5%">
+                    <div class="rad" style="float:right;height:280px">
+                        <div id="time.is_728x90_970x90_970x250_300x250_320x50_ATF" style="position:relative;float:right">
+                            <script data-cfasync="false">
+                                freestar.config.enabled_slots.push({
+                                    placementName: "time.is_728x90_970x90_970x250_300x250_320x50_ATF",
+                                    slotId: "time.is_728x90_970x90_970x250_300x250_320x50_ATF"
+                                });
+                            </script>
+                        </div>
+                        <div id="time.is_728x90_970x90_970x250_300x250_320x50_ATF2" style="position:relative;float:right;clear:none;margin-right:20px"></div>
+                        <div data-freestar-ad="__300x250" id="time.is_300x250_ATF3" style="position:relative;float:right;clear:none;margin-right:20px"></div>
+                        <script data-cfasync="false">
+                            freestar.config.enabled_slots.push({
+                                placementName: "time.is_728x90_970x90_970x250_300x250_320x50_ATF2",
+                                slotId: "time.is_728x90_970x90_970x250_300x250_320x50_ATF2"
+                            })
+                            freestar.config.enabled_slots.push({
+                                placementName: "time.is_300x250_ATF3",
+                                slotId: "time.is_300x250_ATF3"
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            bod = gob('bdy')
+            var l = 'fr',
+                conf = {
+                    d: '%l %j %F %Y, %W',
+                    t: 'H:i:s',
+                    f: 'mt',
+                    c: '2',
+                    o: '',
+                    z: '1',
+                    a: '1',
+                    b: '51ea29.4e4185.28571f.2d99db.80265.1bb85e.1c3b23',
+                    w: '0',
+                    v: '20220218',
+                    h: 0,
+                    i: '1',
+                    Z: '1',
+                    m: '',
+                    u: ''
+                },
+                locs = {
+                    favs: [
+                        ['1850147', '444', 'Tokyo', 'Tokyo, Japon', 'Tokyo', '35,68950', '139,69171', '8 336 599', ''],
+                        ['1816670', '43d', 'Pékin', 'Pékin, Chine', 'Beijing', '39,90750', '116,39723', '11 716 620', ''],
+                        ['524901', '71d', 'Moscou', 'Moscou, Russie', 'Moscow', '55,75222', '37,61556', '10 381 222', ''],
+                        ['2988507', '71f', 'Paris', 'Paris, France', 'Paris', '48,85341', '2,34880', '2 138 551', ''],
+                        ['2643743', '716', 'Londres', 'Londres, Royaume-Uni', 'London', '51,50853', '-0,12574', '7 556 900', ''],
+                        ['5128581', '161', 'New York', 'New York, USA', 'New_York', '40,71427', '-74,00597', '8 175 133', '10'],
+                        ['5368361', '14e', 'Los Angeles', 'Los Angeles, Californie, USA', 'Los_Angeles', '34,05223', '-118,24368', '3 971 883', '89']
+                    ],
+                    main: [
+                        ['2988507', '71f', 'Paris', 'Paris, France', 'Paris', '48,85341', '2,34880', '2 138 551', '']
+                    ]
+                },
+                zones = {
+                    '71f': ['Europe/Paris', 'CET', [60, 1648342800, 120]],
+                    '444': ['Asia/Tokyo', 'JST', [540]],
+                    '43d': ['Asia/Shanghai', 'CST', [480]],
+                    '71d': ['Europe/Moscow', 'MSK', [180]],
+                    '716': ['Europe/London', 'GMT', [0, 1648342800, 60]],
+                    '161': ['America/New_York', 'EST', [-300, 1647154800, -240]],
+                    '14e': ['America/Los_Angeles', 'PST', [-480, 1647165600, -420]]
+                },
+                susdest = '/fr/'
+            zone_id = 'Europe/Paris'
+            zone_code = 'clientside'
+            zone_offset = -new Date().getTimezoneOffset()
+            zones['clientside'] = ['', '', [zone_offset]]
+            p_time_diff = "La différence avec Time.is était de %t (±%D). "
+            p_time_diff_short = "Différence : %t (±%D) "
+            p_failh = "La synchronisation a échoué. "
+            p_fail = "La haute précision n'a pas pu être activée car votre connexion ou votre ordinateur sont trop lents ou occupés. "
+            p_syncing = "Synchronisation en cours"
+            p_conn_failed = "Impossible de se connecter à Time.is"
+            p_try_again = "Réessayer ?"
+            p_no_match = "Aucun résultat"
+            p_no_au = "Désolé, une version récente de Firefox, Opera ou Safari est nécessaire pour activer le son !"
+            p_no_cookie_support = "error_no_cookie_support"
+            p_td = "Aujourd’hui "
+            e_loc = "Entrez un lieu"
+
+            days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"]
+            daysh = ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"]
+            daysI = ["D", "L", "Ma", "Me", "J", "V", "S"]
+            months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+            monthsh = ["jan.", "fév.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+            p_exactt = "Vous êtes à l’heure exacte !"
+            p_t_is = "L’heure exacte est :"
+            p_w = "semaine "
+            p_wn = "semaine %n"
+            p_d = "jour"
+            p_ds = " jours"
+            p_h = " heure"
+            p_hs = " heures"
+            p_m = " minute"
+            p_ms = " minutes"
+            p_s = " seconde"
+            p_ss = " secondes"
+            p_ss_short = " s"
+            p_ur_late = "Votre horloge est en retard de %t"
+            p_ur_early = "Votre horloge est en avance de %t"
+            p_acc = "La précision de la synchronisation était de ±%t."
+            p_acc_short = "Précision de la synchro : ±%t"
+            p_last_s = "Dernière synchronisation : %t"
+            p_last_s_short = "Dernière synchro : %t"
+            p_dec_sym = ","
+            p_and = " et "
+            p_time_remaining = "Temps restant : %t"
+            p_time_since = "Temps depuis : %t"
+
+            p_now = 'maintenant'
+            p_yesterday = 'hier'
+            p_tomorrow = 'demain'
+            p_today = 'aujourd\'hui'
+            p_in_n = 'dans %n'
+            p_ago = 'il y a %n'
+            p_In_x_days = 'Dans %n %days'
+            p_x_days_ago = 'il y a %n %days'
+            p_x_days_before = '%n %days avant %other_date'
+            p_x_days_after = '%n %days après %other_date'
+
+            p_today_date = '[Aujourd\'hui] : %d'
+            units = [p_ss, p_ms, p_hs, p_ds], units_sing = [p_s, p_m, p_h, ' ' + p_d]
+
+            p_enter_loc = 'Entrez un lieu'
+
+            p_default_time_format = 'H:i:s'
+            p_date_formats = ['%l %j %F %Y, %W',
+                '%l %d/%m/%Y, %W',
+                '%l %d/%m/%Y',
+                '%Y-%m-%d'
+            ]
+
+
+            spdays = {
+                '0220': '<a target="_blank" href="https://www.un.org/en/observances/social-justice-day">World Day of Social Justice</a>'
+            }
+            noctp = 1;
+            adheight = 0;;
+            show_big_clock = 1;
+            force24 = 0;
+            beginning_of_time()
+            onresize = function() {
+                setsizes(2)
+            }
+        </script>
+        <div class="w90">
+            <div class="noprint tr faded adjustright" style="position:relative;float:right;margin-right:-10px">
+                <script>
+                    w_p = 'status=no,location=no,toolbar=no,menubar=no,width=700,height=500,left=100,top=100'
+                    tweet_text = 'vérifiez si vous avez l\'heure exacte, et quelle heure il est dans n\'importe quel fuseau horaire'
+                </script>
+                <div class="social_buttons">
+                    <div class="fb-button" onclick="open('https://www.facebook.com/sharer.php?u='+encodeURIComponent(location),'Share',w_p)" title="Share on Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                    </div>
+                    <div class="twitter-button" onclick="open('https://twitter.com/intent/tweet?text='+encodeURIComponent(tweet_text)+'&url='+encodeURIComponent(location)+'&via=Time_is','Share',w_p)" title="Share on Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                    </div>
+                </div>
+                <div class="noprint tr" style="font-size:14px;float:right;margin:0 10px 10px 10px">Partagez cette page !</div>
+            </div>
+        </div>
+    </div>
+    <section id="time_zone" class="d">
+        <h2 style="margin-bottom:20px"><span>Fuseau horaire</span></h2>
+        <div class="keypoints">
+            <ul>
+                <li>Actuellement Central European Time (CET), UTC +1</li>
+                <li>L’heure d’été (Central European Summer Time (CEST), UTC +2) commence le 27 mars 2022</li>
+                <li>Paris a la même heure que Rouen. </li>
+            </ul>
+        </div>
+        <div class="infobox">
+            L'identifiant IANA de fuseau horaire pour Paris est Europe/Paris.
+        </div>
+        <div style="margin-bottom:20px"><a href="https://en.wikipedia.org/wiki/Paris" target="_blank" rel="nofollow,noopener">En savoir plus sur Paris sur Wikipedia</a></div>
+        <div class="action_buttons">
+            <div><a href="/fr/h/2d99db" rel="nofollow"><span>Définir Paris comme lieu par défaut</span></a></div>
+            <div><a href="." onclick="if(confirm('Enlever Paris de vos lieux préférés ?')){conf['b']='.'+conf['b']+'.';if(-1!=conf['b'].indexOf('.2d99db.'))conf['b']=conf['b'].replace('.2d99db.', '.');conf['b']=conf['b'].substr(1,conf['b'].length-2);delete conf['a'];T_I.recook();location='/fr/';}return false"
+                    rel="nofollow"><span>Enlever de vos lieux préférés</span></a></div>
+        </div>
+        <h2 style="margin-top:40px"><span>Lever et coucher du soleil, durée du jour et heure du soleil pour Paris</span></h2>
+        <ul>
+            <li>Lever du soleil : 07:53</li>
+            <li>Coucher du soleil : 18:16</li>
+            <li>Durée du jour : 10h 23min</li>
+            <li>Midi au soleil : 13:04</li>
+            <li>L'heure locale actuelle à Paris est 64 minutes en avance sur l'heure du soleil.</li>
+        </ul>
+        <div class="action_buttons"></div>
+        <div style="padding:40px 0;min-height:90px">
+            <div id="time.is_728x90_320x50_Location3"></div>
+        </div>
+    </section>
+    <section id="time_difference" class="d" style="padding-top:0">
+        <div class="diff_table">
+            <h2><span>Décalage horaire <br><span style="float:left;margin-top:-10px">depuis Paris</span></span>
+            </h2>
+            <table>
+                <tr>
+                    <td class="locname"><a href="/fr/Los_Angeles">Los Angeles</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*9)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">9</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">9</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Chicago">Chicago</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*7)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">7</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">7</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/New_York">New York</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*6)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">6</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">6</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Toronto">Toronto</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*6)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">6</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">6</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/São_Paulo">São Paulo</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*4)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">4</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">4</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/London">Londres</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*1)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">1</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">1</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/UTC">UTC</a></td>
+                    <td class="midcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*1)">
+                            <div></div>
+                        </div><span class="narrowdiff">−<span class="mon">1</span> heures</span>
+                    </td>
+                    <td class="diff_bar_label lastcol">−<span class="mon">1</span> heures</td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Lagos">Lagos</a></td>
+                    <td class="midcol diff_bar_label">0</td>
+                    <td class="lastcol"></td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Zurich">Zurich</a></td>
+                    <td class="midcol diff_bar_label">0</td>
+                    <td class="lastcol"></td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Johannesburg">Johannesbourg</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">1</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*1)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Cairo">Le Caire</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">1</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*1)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Istanbul">Istanbul</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">2</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*2)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Moscow">Moscou</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">2</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*2)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Dubai">Dubaï</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">3</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*3)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Mumbai">Mumbai</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">4</span>,<span class="mon">5</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*4.5)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Hong_Kong">Hong Kong</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">7</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*7)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Shanghai">Shanghai</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">7</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*7)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Singapore">Singapour</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">7</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*7)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Tokyo">Tokyo</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">8</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*8)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="locname"><a href="/fr/Sydney">Sydney</a></td>
+                    <td class="midcol diff_bar_label">+<span class="mon">1</span><span class="mon">0</span> heures</td>
+                    <td class="lastcol">
+                        <div class="diff_bar" style="width:calc(var(--diffmaxwidth)/19*10)">
+                            <div></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="position:absolute;right:5%;z-index:2" data-freestar-ad="__300x600" id="time.is_city-pages_right">
+            <script data-cfasync="false">
+                freestar.config.enabled_slots.push({
+                    placementName: "time.is_city-pages_right",
+                    slotId: "time.is_city-pages_right"
+                })
+            </script>
+        </div>
+        <div class="action_buttons">
+            <div><a href="/fr/compare/Paris">Comparer avec d'autres fuseaux horaires</a></div>
+        </div>
+        <div class="rad" style="float:left">
+            <div id="time.is_728x90_970x90_970x250_300x250_320x50_Middle" style="position:relative;float:right">
+                <script data-cfasync="false">
+                    freestar.config.enabled_slots.push({
+                        placementName: "time.is_728x90_970x90_970x250_300x250_320x50_Middle",
+                        slotId: "time.is_728x90_970x90_970x250_300x250_320x50_Middle"
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <link rel="stylesheet" media="all" href="/js/jvectormap/jquery-jvectormap-2.0.5.css" />
+    <script src="/js/jquery_and_jvectormap_4.js"></script>
+    <section id="map" class="tr d" style="position:relative">
+        <div id="maptext">
+            <h2>Paris sur la carte</h2>
+            <ul>
+                <li>Paris est la capitale de <a href="/fr/France">France</a>.</li>
+                <li>Latitude : 48,85. Longitude : 2,35</li>
+                <li>Population : 2 139 000</li>
+            </ul>
+            <div class="action_buttons"><a href="https://www.google.com/maps/@48.8534100,2.3488000,12z" target="_blank">Agrandir la carte de Paris</a></div>
+        </div>
+
+        <div id="worldmapcover"></div>
+        <div id="worldmap"></div>
+    </section>
+    <section id="restaurants" class="d" style="background:#333">
+        <div>
+            <h2><span>Meilleurs restaurants dans Paris</span></h2>
+            <ul style="padding-left:5px;">
+                <li style="list-style-type:none;"> #1 <a href="https://fr.restaurantguru.com/Epicure-Paris" target="_blank" style="color:#fff;">Epicure</a> - <small> Cuisine françaisee et options végétariennese</small></li>
+                <li style="list-style-type:none;"> #2 <a href="https://fr.restaurantguru.com/Le-Cinq-Paris" target="_blank" style="color:#fff;">Le Cinq Restaurant</a> - <small> Cuisine françaisee et européene</small></li>
+                <li style="list-style-type:none;"> #3 <a href="https://fr.restaurantguru.com/Virtus-Paris-2" target="_blank" style="color:#fff;">Virtus</a> - <small> Cuisine françaisee</small></li>
+            </ul>
+            <h2 style="margin-top:20px;"><span>Trouvez les meilleurs endroits pour manger à Paris</span></h2>
+            <ul>
+                <li><a href="https://fr.restaurantguru.com/desserts-Paris-t12" target="_blank" title="Meilleurs restaurants avec des desserts dans Paris" style="color:#fff;">Meilleurs restaurants avec des desserts dans Paris</a></li>
+                <li><a href="https://fr.restaurantguru.com/dinner-Paris-m9623" target="_blank" title="Meilleur restaurants de dîner dans Paris" style="color:#fff;">Meilleur restaurants de dîner dans Paris</a></li>
+                <li><a href="https://fr.restaurantguru.com/fast-food-Paris-t11" target="_blank" title="Meilleurs restaurants fast food dans Paris" style="color:#fff;">Meilleurs restaurants fast food dans Paris</a></li>
+            </ul>
+            <div class="action_buttons" style="margin-top:20px;">
+                <div><a href="https://fr.restaurantguru.com/Paris" target="_blank">Restaurants à Paris</a></div>
+            </div>
+            <!-- w 1645187212-->
+        </div>
+    </section>
+    <section id="largest_cities" class="tr d">
+        <h2>Les 50 plus grandes villes de <br><a href="France">France</a></h2>
+        <div class="cloud"><a href="Aix-en-Provence" class="s7">Aix-en-Provence</a> <a href="Amiens" class="s8">Amiens</a> <a href="Angers" class="s6 bold">Angers</a> <a href="Argenteuil" class="s13">Argenteuil</a> <a href="Asnières" class="s15">Asnières</a> <a href="Avignon"
+                class="s14">Avignon</a> <a href="Besançon" class="s10">Besançon</a> <a href="Bordeaux" class="s3 bold">Bordeaux</a> <a href="Boulogne-Billancourt" class="s12">Boulogne-Billancourt</a> <a href="Brest,_France" class="s8">Brest</a> <a href="Caen"
+                class="s12">Caen</a> <a href="Cergy-Pontoise" class="s5 bold">Cergy-Pontoise</a> <a href="Clermont-Ferrand" class="s9">Clermont-Ferrand</a> <a href="Courbevoie" class="s16">Courbevoie</a> <a href="Dijon" class="s6">Dijon</a> <a href="Grenoble"
+                class="s6">Grenoble</a> <a href="Le_Havre" class="s4 bold">Le Havre</a> <a href="Le_Mans" class="s8">Le Mans</a> <a href="Lille" class="s3 bold">Lille</a> <a href="Limoges" class="s9">Limoges</a> <a href="Lyon" class="s1 bold">Lyon</a>
+            <a href="Marseille" class="s1 bold">Marseille</a> <a href="Marseille_13" class="s15">Marseille 13</a> <a href="Metz" class="s10">Metz</a> <a href="Montpellier" class="s3 bold">Montpellier</a> <a href="Montreuil" class="s14">Montreuil</a>
+            <a
+                href="Mulhouse" class="s11">Mulhouse</a> <a href="Nancy" class="s12">Nancy</a> <a href="Nanterre" class="s15">Nanterre</a> <a href="Nantes" class="s2 bold">Nantes</a> <a href="Nice" class="s2 bold">Nice</a> <a href="Nîmes" class="s7">Nîmes</a> <a href="Orléans" class="s10">Orléans</a>                <a href="Paris" class="s1 bold capital">Paris</a> <a href="Perpignan" class="s11">Perpignan</a> <a href="Poitiers" class="s16">Poitiers</a> <a href="Reims" class="s4 bold">Reims</a> <a href="Rennes" class="s4 bold">Rennes</a> <a href="Roubaix"
+                    class="s13">Roubaix</a> <a href="Rouen" class="s11">Rouen</a> <a href="Saint-Denis,_France" class="s13">Saint-Denis</a> <a href="Saint-Quentin-en-Yvelines" class="s7">Saint-Quentin-en-Yvelines</a> <a href="Saint-Etienne" class="s5 bold">Saint-Étienne</a>                <a href="Strasbourg" class="s2 bold">Strasbourg</a> <a href="Toulon" class="s5 bold">Toulon</a> <a href="Toulouse" class="s1 bold">Toulouse</a> <a href="Tourcoing" class="s14">Tourcoing</a> <a href="Tours" class="s8">Tours</a> <a href="Versailles,_France"
+                    class="s16">Versailles</a> <a href="Villeurbanne" class="s9">Villeurbanne</a> </div>
+
+        <div class="rad">
+            <div id="time.is_728x90_320x50_Location3" style="position:relative;float:right">
+                <script data-cfasync="false">
+                    freestar.config.enabled_slots.push({
+                        placementName: "time.is_728x90_320x50_Location3",
+                        slotId: "time.is_728x90_320x50_Location3"
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <div id="menupositioner">
+        <div id="close-menu" class="close-btn" onclick="toggle_menu(0)">×</div>
+        <div id="menutransformer">
+
+            <nav id="nav">
+                <div>
+                    <h3><a href="/" class="logo">Time.is</a> <span class="slogan"><span>- </span>l'heure exacte, partout dans le monde</span>
+                    </h3>
+
+                    <div id="menulinks">
+                        <ul>
+                            <li><a href="/fr/">Heure actuelle exacte</a></li>
+                            <li><a href="/fr/compare">Heure ici &amp; là</a></li>
+                            <li><a href="/fr/time_zones">Fuseaux horaires</a></li>
+                            <li><a href="/fr/DST_2022">Heure d’été</a></li>
+                            <li><a href="/fr/clock">Horloge</a></li>
+                            <li><a href="/fr/calendar">Calendrier</a></li>
+                            <li id="aub"><a href="sound">Son</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/fr/apps">Applis</a></li>
+                            <li><a href="/fr/widgets">Widgets</a></li>
+                            <li><a href="/fr/time_zone_news">Actualité des fuseaux horaires</a></li>
+                            <li><a href="/fr/mailing_list">Lettre d'info</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/fr/UTC">UTC</a></li>
+                            <li><a href="/fr/Unix_time_now">Horloge Unix</a></li>
+                            <li><a href="/fr/Unix_time_converter">Convertisseur de temps Unix</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/fr/customize">Personnaliser</a></li>
+                            <li><a href="/fr/FAQ">FAQ</a></li>
+                            <li><a href="/fr/howto">How to use Time.is</a></li>
+                            <li><a href="/fr/about">À propos</a></li>
+                            <li><a href="/fr/contact">Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/fr/advertise">Publicité</a></li>
+                            <li><a href="/fr/terms_of_use">Conditions d'utilisation</a></li>
+                            <li><a href="/fr/terms_of_use#privacy_policy">Vie privée</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="follow_app">
+                    <div id="follow">
+                        <div>Suivez-nous</div>
+                        <a href="https://twitter.com/Time_is" target="_blank" rel="nofollow,noreferer,noopener" style="background:url('/img/social_icons5.png') 192px 32px" onmouseover="Zpos(this,192,0)" onmouseout="Zpos(this,192,32)" title="Suivez Time.is sur Twitter">Twitter</a>
+                    </div>
+                    <div id="appbadge">
+                        <a href="https://itunes.apple.com/app/time.is-exact-time-for-any/id857189816?ls=1&amp;mt=8"><img src="/img/app_store_badge/Download_on_the_App_Store_Badge_FR_135x40.svg" alt="Download on the App Store"></a>
+                    </div>
+                </div>
+            </nav>
+            <script>
+                place_badges()
+            </script>
+            <footer id="footer">
+                <nav></nav>
+                <div>
+                    Time.is affiche l'heure exacte et officielle, basée sur une horloge atomique, pour n'importe quel fuseau horaire (plus de 7 millions de lieux) dans 53 langues.<br>
+                </div>
+                <div id="footerlangs">
+                    <a href="/?lang=en" title="English">What time is it?</a>
+                    <a href="/?lang=zh" title="Chinese (simplified) / 中文">几点了？</a>
+                    <a href="/?lang=hi" title="Hindi / हिंदी">क्या समय हुआ है?</a>
+                    <a href="/?lang=es" title="Spanish / español">¿Qué hora es?</a>
+                    <a href="/?lang=fr" title="French / français">Quelle heure est-il ?</a>
+                    <a href="/?lang=ar" title="Arabic / العربية">كم الساعة</a>
+                    <a href="/?lang=bn" title="Bengali / বাংলা">এখন কয়টা বাজে?</a>
+                    <a href="/?lang=ru" title="Russian / русский">Который час?</a>
+                    <a href="/?lang=pt_br" title="Portuguese (Brazil) / português (Brasil)">Que horas são?</a>
+                    <a href="/?lang=id" title="Indonesian / bahasa Indonesia">Jam berapa?</a>
+                    <a href="/?lang=ur" title="Urdu / اردو زبان">؟ےہ اوہ تقو ایک</a>
+                    <a href="/?lang=de" title="German / Deutsch">Wieviel Uhr ist es?</a>
+                    <a href="/?lang=ja" title="Japanese / 日本語">今何時ですか？</a>
+                    <a href="https://saatkac.info.tr/" title="Turkish / Türkçe">Saat kaç?</a>
+                    <a href="/?lang=ta" title="Tamil / தமிழ்">என்ன நேரம்?</a>
+                    <a href="/languages">&gg; more languages</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        register_anim('time_difference');
+        try {
+            WmapObj = new jvm.Map({
+                container: $('#worldmap'),
+                map: 'world_mill_en',
+                zoomOnScroll: false,
+                panOnDrag: false,
+                dragDisabled: true,
+                selectedRegions: ['FR'],
+                focusOn: {
+                    lat: 48.8534100,
+                    lng: 2.3488000,
+                    scale: 3,
+                },
+                markers: [{
+                    latLng: [48.8534100, 2.3488000],
+                    name: "Paris, France"
+                }],
+                backgroundColor: '#324',
+                regionStyle: {
+                    initial: {
+                        fill: '#75c'
+                    },
+                    hover: {
+                        fill: '#86d',
+                        "fill-opacity": 1,
+                    },
+                    selected: {
+                        fill: '#87f'
+                    },
+                    selectedHover: {}
+                },
+                markerStyle: {
+                    initial: {
+                        fill: '#c35',
+                        stroke: '#000',
+                        "fill-opacity": 1,
+                        "stroke-width": 2,
+                        "stroke-opacity": 1,
+                        r: 10
+                    },
+                    hover: {
+                        stroke: 'black',
+                        "stroke-width": 2,
+                        cursor: 'pointer'
+                    },
+                    selected: {
+                        fill: 'blue'
+                    },
+                    selectedHover: {}
+                }
+            })
+        } catch (err) {}
+        detectAdBlock()
+    </script>
+</body>
+
+</html>

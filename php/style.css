@@ -1,0 +1,21 @@
+html,body {
+    color: rgb(134, 63, 15);
+    background-color: rgb(244, 246, 248);
+    text-align: justify;
+}
+body{
+    margin: 15px 150px;
+}
+fieldset {
+    border-radius: 40px;
+}
+input {
+    border-radius: 10px;
+    padding: 3px;
+    background-color: rgba(219, 185, 157, 0.363);
+}
+td,tr {
+    padding: 20px 30px;
+    background-color: rgba(235, 193, 193, 0.364);
+    border-radius: 5px;
+}

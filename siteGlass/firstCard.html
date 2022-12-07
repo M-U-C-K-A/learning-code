@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .card {
+            text-align: center;
+            margin: 20% 50px 0 50px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5.2px);
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 4em;
+        }
+
+        h2,
+        blockquote,
+        img {
+            margin: 0;
+            padding: 0;
+            font-size: 2em;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: auto;
+            background: url(img1.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<div class="back">
+
+    <body>
+        <div class="card">
+            <h1>Mucka</h1>
+            <blockquote>web developer</blockquote>
+            <p>.　 　　.　　　　　　　*　˚ 　 ˚.　 　✦　.　　　　*　　˚ 　　　.　　　　˚.　 　　.　　　　　　　*　　　　　.　✦　˚ .　　　　˚.　 　　.　　　　　　　*　˚ 　 ˚.　
+                　✦　.　　　　*　　˚ 　　　.　　　　˚.</p>
+            <div class="about">
+                <h2>About me : </h2>
+                <ul>
+                    <li>⚜️ 𝒸𝓇𝓎𝓅𝓉𝑜 𝒹é𝓋𝑒𝓁𝓁𝑜𝓅𝑒𝓊𝓇 🌿</li>
+                    <li>📌 js html css 🍃</li>
+                    <li>📚 εɓσσҡ 2022 🐍</li>
+                    <li>🎨 peinture | dessin 🦜</li>
+                    <li>✒️ BUT MMI 📽️</li>
+            </div>
+            <span>
+                <img src="top.png" alt="scroll up" width="10%" id="scroll">
+            </span>
+            </ul>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                // Set background image of a div on click of the button
+                $("#scroll").click(function () {
+                    let num = Math.floor((Math.random() * 4) + 1);
+                    $(".card").slideUp(1000).delay(800).slideDown(500);
+                    $(".back").fadeOut(10).delay(500);
+                    $(".back").css("background-image", "url(img" + num + ".jpg)");
+                    $(".back").slideDown(100).delay(800);
+                });
+            });
+        </script>
+    </body>
+</div>
+
+</html>

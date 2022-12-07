@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpage | 1</title>
+    <link rel="icon" type="image/x-icon" href="html.png">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        background-color: black;
+        background: url(img1.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color: goldenrod;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        position: relative;
+        float: left;
+        width: 31%;
+        margin: 1%;
+        text-align: justify;
+        background: rgba(255, 255, 255, 0.027);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.349);
+        backdrop-filter: blur(5.2px);
+        color: black;
+    }
+    .card p {
+        margin: 0 25px 0 25px;
+    }
+    .card a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+        font-size: 2em;
+        text-align: center;
+        margin: 20px 20px;
+        background: rgba(255, 255, 255, 0.027);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.349);
+        backdrop-filter: blur(5.2px);
+    }
+    .card a:hover {
+        animation: hover 2s infinite;
+    }
+    @keyframes hover {
+        0%{
+
+        }
+        100%{
+            scale: 15px;
+        }
+    }
+
+    img {
+        width: 50%;
+    }
+</style>
+
+<body>
+    <section>
+        <div class="card">
+            <img src="icons8-twitter.svg" alt="">
+            <h1>Twitter</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam veritatis eveniet, quam a provident officiis
+                porro labore vero maiores, tenetur excepturi repudiandae reprehenderit nemo minima fugit eos similique! Qui,
+                reiciendis.</p>
+            <a href="">Join Now</a>
+        </div>
+        <div class="card"><img src="icons8-instagram.svg" alt="">
+            <h1>Instagram</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam veritatis eveniet, quam a provident officiis
+                porro labore vero maiores, tenetur excepturi repudiandae reprehenderit nemo minima fugit eos similique! Qui,
+                reiciendis.</p>
+            <a href="">Join Now</a>
+        </div>
+        <div class="card"><img src="icons8-youtube-480.svg" alt="">
+            <h1>Youtube</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam veritatis eveniet, quam a provident officiis
+                porro labore vero maiores, tenetur excepturi repudiandae reprehenderit nemo minima fugit eos similique! Qui,
+                reiciendis.</p>
+            <a href="">Join Now</a>
+        </div>
+    </section>
+</body>
+
+</html>
