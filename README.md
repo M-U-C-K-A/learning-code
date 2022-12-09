@@ -28,3 +28,23 @@ Il peut également être utile de se joindre à des communautés en ligne de dat
 5. Opportunités dans la data science pour les développeurs expérimentés.
 6. Importance de rester à jour dans le domaine de la data science.
 7. Avantages de participer à des communautés en ligne de data science.
+
+# librairies
+
+## Numpy
+Numpy est une librairie Python utilisée pour le calcul scientifique et l'analyse de données. Elle offre des fonctionnalités avancées pour la manipulation d'objets de tableaux multidimensionnels et permet de travailler avec des données numériques de manière efficace et rapide.
+
+## Matplotlib
+Matplotlib est une librairie Python utilisée pour la visualisation de données. Elle offre une grande variété d'outils pour créer des graphiques et des diagrammes de manière simple et intuitive.
+
+## Random
+Random est une librairie Python utilisée pour générer des nombres aléatoires. Elle offre des fonctionnalités pour générer des nombres aléatoires selon différentes distributions et pour utiliser ces nombres dans des applications telles que les jeux et les simulations.
+
+## Pandas
+Pandas est une librairie Python utilisée pour l'analyse et le traitement des données. Elle offre des fonctionnalités pour manipuler et analyser des données structurées de manière simple et efficace.
+
+## Scikit-Learn
+Scikit-Learn est une librairie Python utilisée pour l'apprentissage automatique. Elle offre une grande variété d'algorithmes d'apprentissage automatique pré-implémentés et des outils pour évaluer et optimiser ces algorithmes.
+
+## Seaborn
+Seaborn est une librairie Python utilisée pour la visualisation de données statistiques. Elle offre des outils pour créer des graphiques de manière avancée et pour visualiser des relations entre différentes variables de manière intuitive.
