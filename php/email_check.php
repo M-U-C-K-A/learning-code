@@ -1,12 +1,9 @@
-
-
 <?php
-session_start();
+  session_start(); // démarre la session
 
-$code=$_SESSION['code'];
-$civ=$_SESSION['civ'];
-echo "<!-- si l'email ne fonctionne pas, voici le code $code-->";
-echo "<!-- normalement aucun problème -->";
+  // récupère les variables de session 'code' et 'civ'
+  $code = $_SESSION['code'];
+  $civ = $_SESSION['civ'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,21 +14,21 @@ echo "<!-- normalement aucun problème -->";
     <title>Document</title>
 </head>
 <body>
-    <p>E-mail envoyé, regarder dans votre boite mail</p>
+    <p>E-mail envoyé, regardez dans votre boîte mail</p>
     <hr>
-    <p>vérifier les spams</p>
+    <p>Vérifiez les spams</p>
 
     <fieldset>
-    <h2>remplissez le code</h2>
-    <form action="verif_code.php" method="post">
-    <input type="number" name="code_remplis" id="code" min="100000" max="999999" placeholder="Code secret :">
-    <input type="submit" value="code">
-  </form>
+      <h2>Remplissez le code</h2>
+      <form action="verif_code.php" method="post">
+        <input type="number" name="code_remplis" id="code" min="100000" max="999999" placeholder="Code secret :">
+        <input type="submit" value="Code">
+      </form>
     </fieldset>
 
-<!--
-    si le code est le bon alors remplir les informations dans la BDD
--->
+    <!--
+      si le code est le bon, alors remplir les informations dans la base de données
+    -->
 
 </body>
 </html>
