@@ -1,6 +1,29 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<!-- 
+Ce code HTML contient une balise <script> qui exécute une fonction anonyme lorsqu'elle est chargée. 
+Cette fonction définit un certain nombre de variables, ajoute une balise <iframe> à la page et déclare une fonction tcfAPIHandler().
 
+La fonction tcfAPIHandler() traite différents cas en fonction des arguments passés à la fonction. 
+Si aucun argument n'est fourni, elle renvoie une file d'attente vide. 
+Si l'argument setGdprApplies est présent avec les valeurs correctes, 
+elle met à jour la variable gdprApplies et appelle la fonction de rappel fournie avec le résultat set et la valeur true. 
+Si l'argument ping est présent, elle retourne un objet contenant les valeurs de gdprApplies, cmpLoaded et cmpStatus. 
+Dans les autres cas, les arguments sont ajoutés à la file d'attente.
+
+La fonction postMessageEventHandler() est un gestionnaire d'événements pour les messages postés à la fenêtre. 
+Lorsqu'un message est reçu, la fonction extrait les données du message, 
+les traite avec la fonction tcfAPIHandler() et envoie un message de retour avec le résultat.
+
+La fonction uspStubFunction() est un gestionnaire d'événements pour l'événement __uspapi.uspReady. 
+Lorsqu'il est déclenché, cette fonction ajoute un écouteur d'événements pour les messages postés et essaie de créer une iframe avec le nom __tcfapiLocator. 
+Si cette iframe est créée, elle envoie un message pour informer le CMP que l'API est prête.
+
+La fonction principale appelle ensuite la fonction uspStubFunction() en tant que gestionnaire d'événements pour l'événement __uspapi.uspReady. 
+Elle ajoute également un écouteur d'événements pour les messages postés et appelle la fonction makeStub() pour ajouter l'iframe et 
+enregistrer la fonction tcfAPIHandler() comme __tcfapi pour pouvoir être appelée par des scripts tiers.
+-->
 <head>
     <title>Heure actuelle pour Paris, France - Time.is</title>
     <script async=true>
