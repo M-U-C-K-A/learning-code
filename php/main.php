@@ -1,74 +1,46 @@
 <?php
-//ajout de la Base De Donnée
-include 'connect_bdd.php';
-include 'deja_connecte.php';
-//ajout de la table event + des differentes données
-$bddevent = $bdd->prepare("SELECT * FROM sae203_event");
-$bddevent->execute();
-$bddevnt = $bddevent->fetchall();
-//attribution des variables
-foreach($bddevnt as $bd){
-    $Id_event = $bd['Id_event'];
-    $date = $bd['Date'];
-    $time = $bd['Time'];
+  // inclut les fichiers de connection à la base de données et de vérification de la connexion
+  require_once 'connect_bdd.php';
+  require_once 'deja_connecte.php';
+
+  // récupère toutes les entrées de la table 'sae203_event'
+  $bddevent = $bdd->prepare("SELECT * FROM sae203_event");
+  $bddevent->execute();
+  $bddevnt = $bddevent->fetchall();
+
+  // initialise les variables pour les différentes sessions
+  $nbPlace_tot_matin = 0;
+  $nbPlace_reste_matin = 0;
+  $nbPlace_tot_aprem = 0;
+  $nbPlace_reste_aprem = 0;
+  $nbPlace_tot_soir = 0;
+  $nbPlace_reste_soir = 0;
+  $nbPlace_tot_nuit = 0;
+  $nbPlace_reste_nuit = 0;
+
+  // parcourt les entrées de la table et met à jour les variables pour chaque session
+  foreach ($bddevnt as $bd) {
     $session = $bd['Session'];
-}
-
-
-/*
-Nombres de places restante pour la séance du matin.
-nombres de places total+restante
-nombres de places total -> 50
-*/
-$bdd_matin = $bdd->prepare("SELECT NbPlaceTot,NbPlaceReste FROM sae203_event WHERE Session='matin' ");
-$bdd_matin->execute();
-$bdmat = $bdd_matin->fetchall();
-foreach($bdmat as $bd){
-    $nbPlace_tot_matin = $bd['NbPlaceTot'];
-    $nbPlace_reste_matin = $bd['NbPlaceReste'];
-}
-
-/*
-Nombres de places restante pour la séance de l'après midi.
-nombres de places total+restante
-après midi -> 'aprem'
-nombres de places total -> 50
-*/
-$bdd_aprem = $bdd->prepare("SELECT NbPlaceTot,NbPlaceReste FROM sae203_event WHERE Session='aprem' ");
-$bdd_aprem->execute();
-$bdmat = $bdd_aprem->fetchall();
-foreach($bdmat as $bd){
-    $nbPlace_tot_aprem = $bd['NbPlaceTot'];
-    $nbPlace_reste_aprem = $bd['NbPlaceReste'];
-}
-
-/*
-Nombres de places restante pour la séance du soir.
-nombres de places total+restante
-nombres de places total -> 50
-*/
-$bdd_soir = $bdd->prepare("SELECT NbPlaceTot,NbPlaceReste FROM sae203_event WHERE Session='soir' ");
-$bdd_soir->execute();
-$bdmat = $bdd_soir->fetchall();
-foreach($bdmat as $bd){
-    $nbPlace_tot_soir = $bd['NbPlaceTot'];
-    $nbPlace_reste_soir = $bd['NbPlaceReste'];
-}
-
-/*
-Nombres de places restante pour la séance de la nuit.
-nombres de places total+restante
-nombres de places total -> 200
-*/
-$bdd_nuit = $bdd->prepare("SELECT NbPlaceTot,NbPlaceReste FROM sae203_event WHERE Session='nuit' ");
-$bdd_nuit->execute();
-$bdmat = $bdd_nuit->fetchall();
-foreach($bdmat as $bd){
-    $nbPlace_tot_nuit = $bd['NbPlaceTot'];
-    $nbPlace_reste_nuit = $bd['NbPlaceReste'];
-}
+    switch ($session) {
+      case 'matin':
+        $nbPlace_tot_matin = $bd['NbPlaceTot'];
+        $nbPlace_reste_matin = $bd['NbPlaceReste'];
+        break;
+      case 'aprem':
+        $nbPlace_tot_aprem = $bd['NbPlaceTot'];
+        $nbPlace_reste_aprem = $bd['NbPlaceReste'];
+        break;
+      case 'soir':
+        $nbPlace_tot_soir = $bd['NbPlaceTot'];
+        $nbPlace_reste_soir = $bd['NbPlaceReste'];
+        break;
+      case 'nuit':
+        $nbPlace_tot_nuit = $bd['NbPlaceTot'];
+        $nbPlace_reste_nuit = $bd['NbPlaceReste'];
+        break;
+    }
+  }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -81,29 +53,25 @@ foreach($bdmat as $bd){
 <body>
 <fieldset>
 
-<h1>Nombres de places disponible</h1>
-    <h2>jour :</h2>
-    <h3>matin :</h3><p><?php 
+<h1>Nombres de places disponibles</h1>
+    <h2>Jour :</h2>
+    <h3>Matin :</h3><p><?php 
     echo $nbPlace_reste_matin,"/",$nbPlace_tot_matin;
     ?></p>
-    <h3>apres midi :</h3><p><?php 
+
+    <h3>Après-midi :</h3><p><?php 
     echo $nbPlace_reste_aprem,"/",$nbPlace_tot_aprem;
     ?></p>
-    <h3>soir :</h3><p><?php 
+
+    <h3>Soir :</h3><p><?php 
     echo $nbPlace_reste_soir,"/",$nbPlace_tot_soir;
-    ?></p>  
+    ?></p>
 
-    
-      
-    <h2>nuit :</h2><p><?php 
+    <h3>Nuit :</h3><p><?php 
     echo $nbPlace_reste_nuit,"/",$nbPlace_tot_nuit;
-    ?></p><fieldset style="text-align:center; font-size:2rem;">
-    
-    <blockquote>Connexion : <a href="connect.php">Connexion</a></blockquote>
-
-    <blockquote>réservation : <a href="reservation.php">reservation</a></blockquote>
-    </fieldset>
+    ?></p>
 
 </fieldset>
+
 </body>
 </html>
