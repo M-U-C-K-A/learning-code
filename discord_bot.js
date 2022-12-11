@@ -1,3 +1,10 @@
+/*
+Le code ci-dessus est utilisé dans un programme de chat pour exécuter une commande "LONG". 
+Cette commande permet à l'utilisateur d'ouvrir une position "LONG" sur une crypto-monnaie en spécifiant divers arguments 
+tels que la monnaie, le stop-loss, le take-profit et le levier. 
+Le code utilise également l'API Binance pour obtenir le prix actuel de la crypto-monnaie en question et l'affiche dans un message dans le chat. 
+Enfin, les détails de la transaction sont enregistrés dans une base de données en utilisant l'objet "Calls".
+*/
 client.on('message', message => {
             //if (message.author.bot) return;
             //console.log([${message.author.tag}]: ${message.content});
