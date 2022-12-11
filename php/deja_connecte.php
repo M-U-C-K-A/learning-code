@@ -1,26 +1,14 @@
-<?php 
-/*
-verification de la session, atribut connecte 
-si atribut a 0:
--ne rien faire
-si atribut a 1:
-afficher "vous etes connecter" + Bonjour + $Civ
+<?php
+  session_start(); // démarre la session
 
-*/
-
-session_start();
-if(isset($_SESSION['name'])){
-    $user_name= $_SESSION['name'];
-    $user_prenom=$_SESSION['prenom'];
-    echo "<br> Bonjour ",$user_prenom," ",$user_name,".";
-}else {
-    echo "<br> bonjour vous n'êtes pas connecté";
-    //token d'authentification a 1
-    $connect = 0;
-    $_SESSION['connect']=$connect;
-
-}
-
-
-
+  // vérifie si l'utilisateur est connecté
+  if (isset($_SESSION['name']) && isset($_SESSION['prenom'])) {
+    // affiche un message de bienvenue à l'utilisateur
+    echo "<br> Bonjour ",$_SESSION['prenom']," ",$_SESSION['name'],".";
+  } else {
+    // affiche un message indiquant que l'utilisateur n'est pas connecté
+    echo "<br> Bonjour, vous n'êtes pas connecté.";
+    // définit le token d'authentification à 0
+    $_SESSION['connect'] = 0;
+  }
 ?>
