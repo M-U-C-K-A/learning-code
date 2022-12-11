@@ -1,10 +1,14 @@
 <?php
-include 'connect_bdd.php';
-include 'deja_connecte.php';
-$connect =$_SESSION['connect'];
-if($connect==1){
-  header('Location: reservation.php');
-}
+  session_start(); // démarre la session
+
+  // inclut les fichiers de connection à la base de données et de vérification de la connexion
+  require_once 'connect_bdd.php';
+  require_once 'deja_connecte.php';
+
+  // vérifie si l'utilisateur est déjà connecté
+  if (is_user_logged_in()) {
+    header('Location: reservation.php'); // redirige vers la page de réservation
+  }
 ?>
 
 <!DOCTYPE html>
