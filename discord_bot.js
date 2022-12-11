@@ -39,39 +39,43 @@ client.on('message', message => {
         // On récupère le prix de la crypto-monnaie à partir des informations stockées dans le tableau "arrayPrice" et on le stocke dans la variable "price".
         price = arrayPrice[0]['price'];
 
-        // On envoie un message dans le chat
+        // On envoie un message dans le chat// Récupère le premier élément du tableau de prix
+const price = arrayPrice[0]['price'];
 
-                        price = arrayPrice[0]['price'];
+// Envoie un message dans le canal avec un embed contenant les informations sur l'ordre LONG
+message.channel.send({
+embed: {
+color: 3447003, // Code couleur
+author: { // Auteur du message
+name: message.author.username, // Nom d'utilisateur
+icon_url: message.author.displayAvatarURL() // Icône d'utilisateur
+},
+description: message.author.username + " a ouvert un LONG " + args[0], // Description du message
+fields: [ // Champs d'informations supplémentaires
+{ name: "Entry", value: price + "$", inline: false }, // Prix d'entrée
+{ name: "SL", value: args[4] + "$", inline: true }, // Stop loss
+{ name: "TP", value: args[6] + "$", inline: true }, // Take profit
+{ name: "Leverage", value: args[7], inline: true } // Levier
+],
+}
+});
 
-                        message.channel.send({
-                            embed: {
-                                color: 3447003,
-                                author: {
-                                    name: message.author.username,
-                                    icon_url: message.author.displayAvatarURL()
-                                },
-                                description: message.author.username + " a ouvert un LONG " + args[0],
-                                fields: [
-                                    { name: "Entry", value: price + "$", inline: false },
-                                    { name: "SL", value: args[4] + "$", inline: true },
-                                    { name: "TP", value: args[6] + "$", inline: true },
-                                    { name: "Leverage", value: args[7], inline: true }
-                                ],
-                            }
-                        });
-                        const calls = new Calls({
-                            username: message.author.username,
-                            userID: message.author.id,
-                            callType: 'LONG',
-                            coin: args[0],
-                            valueEntry: price,
-                            entryTime: message.createdAt,
-                            tp: args[6],
-                            sl: args[4],
-                            closeTime: '',
-                            valueClose: ''
-                        });
-                        calls.save()
+// Crée un nouvel objet "Calls" contenant les informations sur l'ordre LONG
+const calls = new Calls({
+username: message.author.username, // Nom d'utilisateur
+userID: message.author.id, // ID d'utilisateur
+callType: 'LONG', // Type d'ordre (LONG)
+coin: args[0], // Monnaie
+valueEntry: price, // Prix d'entrée
+entryTime: message.createdAt, // Date/heure d'ouverture
+tp: args[6], // Take profit
+sl: args[4], // Stop loss
+closeTime: '', // Date/heure de fermeture (vide pour l'instant)
+valueClose: '' // Valeur de fermeture (vide pour l'instant)
+});
+
+// Sauvegarde l'objet "Calls" en base de données
+calls.save()
                             .then(result => console.log(result))
                             .catch(err => console.log(err));
                     } catch (err) {
